@@ -7,166 +7,159 @@
 
     <title>Phone Compare - 스마트폰 비교</title>
 
-    <!-- 디자인 파일 -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <div class="header-content">
-            <h1>📱 Phone Compare</h1>
-            <p>iPhone과 Galaxy를 쉽고 빠르게 비교하세요.</p>
+<header>
+    <div class="header-content">
+        <h1>📱 Phone Compare</h1>
+        <p>iPhone과 Galaxy를 쉽고 빠르게 비교하세요.</p>
+    </div>
+</header>
+
+<main>
+
+    <section class="compare-box">
+
+        <h2>스마트폰 비교</h2>
+
+        <p class="guide">
+            비교할 스마트폰 두 개를 검색하세요.
+        </p>
+
+        <div class="phone-select-area">
+
+            <!-- 첫 번째 스마트폰 -->
+            <div class="phone-search">
+
+                <label>첫 번째 스마트폰</label>
+
+                <input
+                    type="text"
+                    id="search1"
+                    placeholder="예: S21, iPhone 15 Pro"
+                    autocomplete="off"
+                >
+
+                <div
+                    id="results1"
+                    class="search-results">
+                </div>
+
+                <div
+                    id="selected1"
+                    class="selected-phone">
+                    스마트폰을 선택하세요
+                </div>
+
+            </div>
+
+            <div class="vs">
+                VS
+            </div>
+
+            <!-- 두 번째 스마트폰 -->
+            <div class="phone-search">
+
+                <label>두 번째 스마트폰</label>
+
+                <input
+                    type="text"
+                    id="search2"
+                    placeholder="예: S26 Ultra, iPhone 17"
+                    autocomplete="off"
+                >
+
+                <div
+                    id="results2"
+                    class="search-results">
+                </div>
+
+                <div
+                    id="selected2"
+                    class="selected-phone">
+                    스마트폰을 선택하세요
+                </div>
+
+            </div>
+
         </div>
-    </header>
+
+        <button
+            id="compareButton"
+            onclick="comparePhones()">
+            비교하기 ⚡
+        </button>
+
+    </section>
 
 
-    <main>
+    <!-- 비교 결과 -->
+    <section
+        id="comparison"
+        class="comparison"
+        style="display:none;"
+    >
 
-        <section class="compare-box">
+        <h2>비교 결과</h2>
 
-            <h2>스마트폰 비교</h2>
-            <p class="guide">
-                비교할 스마트폰 두 개를 검색하세요.
+        <table class="spec-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>항목</th>
+
+                    <th id="phone1Name">
+                        스마트폰 1
+                    </th>
+
+                    <th id="phone2Name">
+                        스마트폰 2
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="specTableBody">
+            </tbody>
+
+        </table>
+
+
+        <div class="winner-box">
+
+            <h3>🏆 종합 비교</h3>
+
+            <p id="winner">
             </p>
 
+        </div>
 
-            <div class="phone-select-area">
+    </section>
 
-                <!-- 왼쪽 스마트폰 -->
-                <div class="phone-search">
-
-                    <label>첫 번째 스마트폰</label>
-
-                    <input
-                        type="text"
-                        id="search1"
-                        placeholder="예: S21, iPhone 15 Pro"
-                        autocomplete="off"
-                    >
-
-                    <div
-                        id="results1"
-                        class="search-results">
-                    </div>
-
-                    <div
-                        id="selected1"
-                        class="selected-phone">
-                        스마트폰을 선택하세요
-                    </div>
-
-                </div>
+</main>
 
 
-                <div class="vs">
-                    VS
-                </div>
+<footer>
+
+    <p>
+        Phone Compare
+    </p>
+
+    <p class="footer-small">
+        스마트폰 사양을 간편하게 비교하세요.
+    </p>
+
+</footer>
 
 
-                <!-- 오른쪽 스마트폰 -->
-                <div class="phone-search">
-
-                    <label>두 번째 스마트폰</label>
-
-                    <input
-                        type="text"
-                        id="search2"
-                        placeholder="예: S26 Ultra, iPhone 17"
-                        autocomplete="off"
-                    >
-
-                    <div
-                        id="results2"
-                        class="search-results">
-                    </div>
-
-                    <div
-                        id="selected2"
-                        class="selected-phone">
-                        스마트폰을 선택하세요
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <button
-                id="compareButton"
-                onclick="comparePhones()">
-
-                비교하기 ⚡
-
-            </button>
-
-        </section>
-
-
-        <!-- 비교 결과 -->
-
-        <section
-            id="comparison"
-            class="comparison">
-
-            <h2>비교 결과</h2>
-
-
-            <div class="phone-title-row">
-
-                <div></div>
-
-                <div
-                    id="phoneName1"
-                    class="phone-title">
-                </div>
-
-                <div
-                    id="phoneName2"
-                    class="phone-title">
-                </div>
-
-            </div>
-
-
-            <div
-                id="specTable"
-                class="spec-table">
-            </div>
-
-
-            <div class="winner-box">
-
-                <h3>🏆 종합 비교</h3>
-
-                <p id="winnerText">
-                </p>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <footer>
-
-        <p>
-            Phone Compare
-        </p>
-
-        <p class="footer-small">
-            스마트폰 사양을 간편하게 비교하세요.
-        </p>
-
-    </footer>
-
-
-    <!-- 스마트폰 데이터 -->
-    <script src="phones.js"></script>
-
-    <!-- 검색 및 비교 기능 -->
-    <script src="script.js"></script>
+<script src="phones.js"></script>
+<script src="script.js"></script>
 
 </body>
 
