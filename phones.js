@@ -132,3 +132,5 @@ const phones = [
   { id:"s26plus", name:"Galaxy S26+", search:"s26plus s26+ 갤럭시s26플러스", brand:"Samsung", year:2026 },
   { id:"s26ultra", name:"Galaxy S26 Ultra", search:"s26ultra s26울트라 갤럭시s26울트라", brand:"Samsung", year:2026 }
 ];
+{ id:"iphone17promax", name:"iPhone 17 Pro Max", search:"iphone17promax 아이폰17프로맥스", brand:"Apple", year:2025 },
+{ id:"iphone17e", name:"iPhone 17e", search:"iphone17e 아이폰17e 17e", brand:"Apple", year:2026 },
