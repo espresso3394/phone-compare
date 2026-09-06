@@ -931,3 +931,105 @@ const phones = [
     weight:"약 214g", os:"Android / One UI"
   }
 ];
+// =========================================================
+// GEEKBENCH 6 CPU 대표 점수
+// 실제 측정 환경에 따라 점수는 달라질 수 있음
+// =========================================================
+
+const geekbenchScores = {
+  // iPhone
+  iphone8:        { single: 950,  multi: 1750 },
+  iphone8plus:    { single: 950,  multi: 1750 },
+  iphonex:        { single: 950,  multi: 1750 },
+
+  iphonexr:       { single: 1300, multi: 2550 },
+  iphonexs:       { single: 1300, multi: 2550 },
+  iphonexsmax:    { single: 1300, multi: 2550 },
+
+  iphone11:       { single: 1700, multi: 3700 },
+  iphone11pro:    { single: 1700, multi: 3700 },
+  iphone11promax: { single: 1700, multi: 3700 },
+  iphonese2:      { single: 1700, multi: 3700 },
+
+  iphone12mini:   { single: 2000, multi: 4400 },
+  iphone12:       { single: 2000, multi: 4400 },
+  iphone12pro:    { single: 2000, multi: 4400 },
+  iphone12promax: { single: 2000, multi: 4400 },
+
+  iphone13mini:   { single: 2250, multi: 5400 },
+  iphone13:       { single: 2250, multi: 5400 },
+  iphone13pro:    { single: 2300, multi: 5600 },
+  iphone13promax: { single: 2300, multi: 5600 },
+  iphonese3:      { single: 2250, multi: 5300 },
+
+  iphone14:       { single: 2250, multi: 5400 },
+  iphone14plus:   { single: 2250, multi: 5400 },
+  iphone14pro:    { single: 2550, multi: 6500 },
+  iphone14promax: { single: 2550, multi: 6500 },
+
+  iphone15:       { single: 2550, multi: 6400 },
+  iphone15plus:   { single: 2550, multi: 6400 },
+  iphone15pro:    { single: 2900, multi: 7200 },
+  iphone15promax: { single: 2900, multi: 7200 },
+
+  iphone16:       { single: 3250, multi: 8000 },
+  iphone16plus:   { single: 3250, multi: 8000 },
+  iphone16pro:    { single: 3500, multi: 8700 },
+  iphone16promax: { single: 3500, multi: 8700 },
+  iphone16e:      { single: 3200, multi: 7900 },
+
+  iphone17:       { single: 3550, multi: 9000 },
+  iphoneair:      { single: 3650, multi: 9200 },
+  iphone17pro:    { single: 3770, multi: 9800 },
+  iphone17promax: { single: 3770, multi: 9800 },
+
+  // Galaxy
+  s10e:      { single: 800,  multi: 2100 },
+  s10:       { single: 800,  multi: 2100 },
+  s10plus:   { single: 800,  multi: 2100 },
+  s105g:     { single: 800,  multi: 2100 },
+
+  s20:       { single: 1050, multi: 3200 },
+  s20plus:   { single: 1050, multi: 3200 },
+  s20ultra:  { single: 1050, multi: 3200 },
+  s20fe:     { single: 1100, multi: 3300 },
+
+  s21:       { single: 1100, multi: 3500 },
+  s21plus:   { single: 1100, multi: 3500 },
+  s21ultra:  { single: 1100, multi: 3500 },
+  s21fe:     { single: 1200, multi: 3500 },
+
+  s22:       { single: 1600, multi: 3800 },
+  s22plus:   { single: 1600, multi: 3800 },
+  s22ultra:  { single: 1600, multi: 3800 },
+
+  s23:       { single: 1900, multi: 5000 },
+  s23plus:   { single: 1900, multi: 5000 },
+  s23ultra:  { single: 1900, multi: 5000 },
+  s23fe:     { single: 1600, multi: 4000 },
+
+  s24:       { single: 2150, multi: 6600 },
+  s24plus:   { single: 2150, multi: 6600 },
+  s24ultra:  { single: 2250, multi: 7000 },
+  s24fe:     { single: 2100, multi: 6400 },
+
+  s25:       { single: 3000, multi: 9500 },
+  s25plus:   { single: 3000, multi: 9500 },
+  s25ultra:  { single: 3000, multi: 9500 }
+};
+
+
+// phones 데이터에 Geekbench 점수 자동 추가
+phones.forEach(phone => {
+
+  const score = geekbenchScores[phone.id];
+
+  if (score) {
+    phone.geekbenchSingle = score.single;
+    phone.geekbenchMulti = score.multi;
+  } else {
+    phone.geekbenchSingle = null;
+    phone.geekbenchMulti = null;
+  }
+
+});
