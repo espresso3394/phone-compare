@@ -188,7 +188,13 @@ function compareNumeric(value1, value2, type) {
     number1 = refreshNumber(value1);
     number2 = refreshNumber(value2);
   }
+if (type === "benchmark") {
+  number1 = Number(value1);
+  number2 = Number(value2);
 
+  if (!Number.isFinite(number1)) number1 = null;
+  if (!Number.isFinite(number2)) number2 = null;
+}
   if (type === "year") {
     number1 = yearNumber(value1);
     number2 = yearNumber(value2);
@@ -248,7 +254,16 @@ function comparePhones() {
   document.getElementById("phone2Name").textContent =
     selectedPhone2.name;
 
-  const specs = [
+  const specs = [{
+  label: "Geekbench 6 싱글코어",
+  key: "geekbenchSingle",
+  compare: "benchmark"
+},
+{
+  label: "Geekbench 6 멀티코어",
+  key: "geekbenchMulti",
+  compare: "benchmark"
+},
     {
       label: "제조사",
       key: "brand"
