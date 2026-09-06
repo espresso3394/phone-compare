@@ -129,15 +129,21 @@ const phones = [
     battery:"약 1960mAh", camera:"후면 12MP",
     weight:"138g", os:"iOS 10"
   },
-  {
-    id:"iphone7plus", name:"iPhone 7 Plus",
-    search:"iphone7plus 아이폰7플러스",
-    brand:"Apple", year:2016,
-    chipset:"Apple A10 Fusion", ram:"3GB",
-    display:"5.5인치 Retina HD LCD · 1920×1080", refreshRate:"60Hz",
-    battery:"약 2900mAh", camera:"12MP 광각 + 12MP 망원",
-    weight:"188g", os:"iOS 10"
-  },
+ {
+  id: "iphone7plus",
+  name: "iPhone 7 Plus",
+  search: "iphone7plus 아이폰7플러스",
+  brand: "Apple",
+  year: 2016,
+  chipset: "Apple A10 Fusion",
+  ram: "3GB",
+  display: "5.5인치 Retina HD LCD · 1920×1080",
+  refreshRate: "60Hz",
+  battery: "약 2900mAh",
+  camera: "12MP 광각 + 12MP 망원",
+  weight: "188g",
+  os: "iOS 10"
+},
   {
     id:"iphone8", name:"iPhone 8",
     search:"iphone8 아이폰8",
